@@ -15,7 +15,7 @@ const meassageTwo = document.querySelector('#message-2')
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    const location = 'http://localhost:3000/weather?address=' + serach.value
+    const location = '/weather?address=' + serach.value
     meassageOne.textContent = 'Loading...'
     meassageTwo.textContent = ''
     fetch(location).then((response) => {
