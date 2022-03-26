@@ -52,13 +52,13 @@ app.get('/weather', (req, res) =>{
         if(error) {
             return res.send({ error }) 
         } else {
-            forecast(latitude, longitude, (error, {description, temperature, feelslike}) =>{
+            forecast(latitude, longitude, (error, {description, temperature, feelslike, isDay}) =>{
                 if(error) {
                     return res.send({ error })
                 }
                 res.send({
                     location,
-                    description: description + '. It is currently ' + temperature + ' degrees out. It feels like ' + feelslike + ' degrees out.',
+                    description: description + '. It is currently ' + temperature + ' degrees out. It feels like ' + feelslike + ' degrees out. is day : ' + isDay,
                     address: req.query.address
                 })
             
